@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/ico" href="https://video.friday.tw/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://video.friday.tw/img/favicon.ico" />
+    <title>TV - Search</title>
+    <script type="text/javascript" src="$WEBAPIS/webapis/webapis.js"></script>
+    <!-- Google Analytic 4 -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYERM8MBLM"></script>
+    <!-- <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-YYERM8MBLM');
+    </script> -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/search.css">
+
+    <!-- jQuery Lib -->
+    <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
+    <!-- webapis -->
+    <script type="text/javascript" src="$WEBAPIS/webapis/webapis.js"></script>
+    <script src="./js/searchControlManage.js"></script>
+    <script src="./js/Log.js"></script>
+  
+</head>
+<body>
+    <main class="main">
+        <div id="search_keyword_view" class="search-view-all">
+           
+           
+          
+
+            <div class="search-input-area focus-row">
+                <input id="searchTextField" class="search-input focus-item" type="text" placeholder="搜尋片名、導演或演員" tabindex="0" ime-mode="enabled" data-pos="0" />
+            </div>
+
+            <div class="search-index">
+                <h6 class="search-result-title ">請於上方輸入欄輸入關鍵字</h6>
+            </div>
+        
+        
+            <div class="search-result" style="display: none;">
+                <h6 class="search-result-title">搜尋<span id='keyword' class="result-highlight">「模範計程車」</span>找到以下結果</h6>
+        
+                <section class="section-cabinet">        
+                    <div id="movie-row" class="cabinet vertical">
+                        <h6 class="cabinet-name">電影 (<span id="movie-count"></span>)</h6>
+                        <div class="cabinet-scroll-area">
+                            <div class="cabinet-container">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="drama-row" class="cabinet horizontal">
+                        <h6 class="cabinet-name">戲劇 (<span id="drama-count"></span>)</h6>
+                        <div class="cabinet-scroll-area">
+                            <div class="cabinet-container">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="anime-row" class="cabinet horizontal">
+                        <h6 class="cabinet-name">動漫 (<span id="anime-count"></span>)</h6>
+                        <div class="cabinet-scroll-area">
+                            <div class="cabinet-container">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="iety-row" class="cabinet horizontal">
+                        <h6 class="cabinet-name">綜藝 (<span id="iety-count"></span>)</h6>
+                        <div class="cabinet-scroll-area">
+                            <div class="cabinet-container">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="other-row" class="cabinet horizontal">
+                        <h6 class="cabinet-name">其他 (<span id="other-count"></span>)</h6>
+                        <div class="cabinet-scroll-area">
+                            <div class="cabinet-container">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- londing -->
+        <div class="progress" id="progress" style="display: none;">
+            <div class="progress-inner">
+                <span class="progress-bar"></span>
+                <span class="progress-logo">
+                    <div class="loading-circle"></div>
+                </span>
+            </div>
+        </div>
+        <!-- end londing-->
+        
+        
+        <section class="search-view-more">
+            <div class="search-more-container">
+        
+                <div class="cabinet-slider-item">
+                    <div class="cabnet-item-content">
+                        <div class="cabnet-item-cover">
+                            <img src="https://vbmspic.video.friday.tw/GROUP/1500/1500_74643_M.jpg" alt="玩什麼好呢？">
+                            <div class="feature-tag purple">跟播中</div>
+                            <div class="payment-tag free">免費</div>
+                        </div>
+        
+                        <div class="cabnet-item-text">玩什麼好呢？</div>
+                    </div>
+                </div>
+        
+                <div class="cabinet-slider-item">
+                    <div class="cabnet-item-content">
+                        <div class="cabnet-item-cover">
+                            <img src="https://vbmspic.video.friday.tw/GROUP/1127/1127_4571023_M.jpg" alt="Running Man">
+                            <div class="feature-tag purple">跟播中</div>
+                            <div class="payment-tag free">免費</div>
+                        </div>
+        
+                        <div class="cabnet-item-text">Running Man</div>
+                    </div>
+                </div>
+        
+                <div class="cabinet-slider-item">
+                    <div class="cabnet-item-content">
+                        <div class="cabnet-item-cover">
+                            <img src="https://vbmspic.video.friday.tw/GROUP/2725/2725_9532_M.jpg" alt="大神探探愛">
+                            <!-- <div class="feature-tag "></div> -->
+                            <div class="payment-tag free">免費</div>
+                        </div>
+        
+                        <div class="cabnet-item-text">大神探探愛</div>
+                    </div>
+                </div>
+        
+                <div class="cabinet-slider-item">
+                    <div class="cabnet-item-content">
+                        <div class="cabnet-item-cover">
+                            <img src="https://vbmspic.video.friday.tw/GROUP/2110/2110_9916_M.jpg" alt="劉QUIZ ON THE BLOCK">
+                            <div class="feature-tag purple">跟播中</div>
+                            <!-- <div class="payment-tag free">免費</div> -->
+                        </div>
+        
+                        <div class="cabnet-item-text">劉QUIZ ON THE BLOCK</div>
+                    </div>
+                </div>
+        
+                <div class="cabinet-slider-item">
+                    <div class="cabnet-item-content">
+                        <div class="cabnet-item-cover">
+                            <img src="https://vbmspic.video.friday.tw/GROUP/1949/1949_163050_M.jpg" alt="第六感第2季">
+                            <!-- <div class="feature-tag purple">跟播中</div> -->
+                            <!-- <div class="payment-tag free">免費</div> -->
+                        </div>
+        
+                        <div class="cabnet-item-text">第六感第2季</div>
+                    </div>
+                </div>
+        
+                <div class="cabinet-slider-item">
+                    <div class="cabnet-item-content">
+                        <div class="cabnet-item-cover">
+                            <img src="https://vbmspic.video.friday.tw/GROUP/2345/2345_8516914_M.jpg" alt="第六感第3季">
+                            <!-- <div class="feature-tag purple">跟播中</div> -->
+                            <div class="payment-tag free">免費</div>
+                        </div>
+        
+                        <div class="cabnet-item-text">第六感第3季</div>
+                    </div>
+                </div>
+        
+                <div class="cabinet-slider-item">
+                    <div class="cabnet-item-content">
+                        <div class="cabnet-item-cover">
+                            <img src="https://vbmspic.video.friday.tw/GROUP/1876/1876_19081429_M.jpg" alt="COME BACK HOME">
+                            <!-- <div class="feature-tag purple">跟播中</div> -->
+                            <div class="payment-tag free">免費</div>
+                        </div>
+        
+                        <div class="cabnet-item-text">COME BACK HOME</div>
+                    </div>
+                </div>
+        
+            </div>
+        
+            <div class="back-btn">
+                <div class="back-btn-icon">
+                    <img src="./img/icon-back.svg" alt="">
+                </div>
+                <h6>返回</h6>
+            </div>
+        
+        </section>        
+    </main>
+
+    
+    
+	<script type="text/javascript" src="./js/main.js"></script>
+    
+  
+
+
+    <!-- lazyload -->
+    <script type="text/javascript" src="./js/lazyload.js"></script>    
+</body>
+</html>

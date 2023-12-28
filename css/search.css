@@ -1,0 +1,192 @@
+@charset "UTF-8";
+/* ============================================================
+COLOR Definition
+============================================================ */
+/* ============================================================
+點擊動態
+============================================================ */
+@-webkit-keyframes clickTransform {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes clickTransform {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.friday-video-logo {
+  display: none;
+}
+
+main {
+  padding: 10vh 0;
+  width: 100%;
+  left: 0;
+}
+
+main .search-view-all {
+  margin-top: 2rem;
+}
+
+main .search-view-all .search-index {
+  position: relative;
+  min-height: 80vh;
+}
+
+main .search-view-all .search-result {
+  min-height: 80vh;
+}
+
+main .search-view-all h6.search-result-title {
+  width: 95%;
+  position: relative;
+  padding-left: 5%;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fffee5;
+  text-align: left;
+  margin-top: 2.5%;
+  margin-bottom: 4%;
+}
+
+main .search-view-all h6.search-result-title .result-highlight {
+  color: #ff8400;
+}
+
+main .search-view-all section.section-cabinet {
+  width: 95%;
+  position: relative;
+  overflow: hidden;
+  padding-left: 5%;
+  z-index: 10;
+  padding-bottom: 5vh;
+}
+
+main .search-view-all .search-input-area {
+  width: 100%;
+  position: fixed;
+  height: 6.2rem;
+  top: 0;
+  left: 0;
+  background: #253140;
+  z-index: 100;
+}
+
+main .search-view-all .search-input-area input {
+  width: 90%;
+  height: 4.5rem;
+  position: relative;
+  margin: 0.8rem 5%;
+  border-radius: .5rem;
+  background: #fff;
+  padding: 0 4%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 7vh;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  outline: none;
+  border: none;
+}
+
+main .search-view-all .search-input-area input:focus {
+  border: 0.3rem solid #00afeb;
+  outline: none;
+}
+
+main .search-view-more {
+  opacity: 0;
+  display: none;
+}
+
+main .search-view-more .search-more-container {
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .search-view-more .search-more-container .cabinet-slider-item {
+  width: 23.5%;
+  position: relative;
+  margin: 0 2% 4% 0;
+}
+
+main .search-view-more .search-more-container .cabinet-slider-item:nth-child(4n) {
+  margin: 0 0 4% 0;
+}
+
+
+
+.hot-key-item .cabnet-item-content .cabnet-item-text:hover {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.86rem;
+  font-weight: 500;
+  color: #ccc;
+  white-space: nowrap;
+  position: relative;
+  left: 0;
+  border: 0.3rem solid #00afeb;
+  color:#ff8400
+} 
+
+.hot-key-item:focus{
+  padding: 1% 2% 1% 2%;
+  border: 2px solid #00afeb;
+  
+  width: fit-content;
+  font-size: 1.86rem;
+  font-weight: 500;
+  color: #ccc;
+  white-space: nowrap;
+  position: relative;
+  margin: 15px 15px; 
+  outline: 2px solid #00afeb; /* Add blue outline when focused */
+}
+
+.hot-key-item{
+  padding: 1% 2% 1% 2%;
+  width: fit-content;
+  font-size: 1.86rem;
+  font-weight: 500;
+  color: #ccc;
+  margin:15px 15px; 
+  white-space: nowrap;
+  position: relative;  
+  outline: 2px solid rgb(255, 255, 255); /* Add blue outline when focused */
+}
+
+/*# sourceMappingURL=search_view.css.map */
